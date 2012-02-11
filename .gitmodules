@@ -1,0 +1,21 @@
+[submodule "emacs.d/vendor/maxframe.el"]
+	path = emacs.d/vendor/maxframe.el
+	url = git://github.com/rmm5t/maxframe.el.git
+[submodule "emacs.d/vendor/rinari"]
+	path = emacs.d/vendor/rinari
+	url = git://github.com/eschulte/rinari.git
+[submodule "emacs.d/vendor/psvn"]
+	path = emacs.d/vendor/psvn
+	url = git://github.com/emacsmirror/psvn.git
+[submodule "emacs.d/vendor/markdown-mode"]
+	path = emacs.d/vendor/markdown-mode
+	url = git://github.com/defunkt/markdown-mode.git
+[submodule "emacs.d/vendor/magit"]
+	path = emacs.d/vendor/magit
+	url = git://github.com/magit/magit.git
+[submodule "emacs.d/vendor/js2-mode"]
+	path = emacs.d/vendor/js2-mode
+	url = https://github.com/mooz/js2-mode.git
+[submodule "emacs.d/vendor/inf-ruby"]
+	path = emacs.d/vendor/inf-ruby
+	url = git://github.com/nonsequitur/inf-ruby.git
