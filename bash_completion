@@ -3,6 +3,6 @@ if [ -f ~/bin/rake_completion ]; then
   complete -C ~/bin/rake_completion -o default rake
 fi
 
-if [ -f ~/git_completion.bash ]; then
-  . ~/git_completion.bash
+if [ -f ~/git-completion.bash ]; then
+  . ~/git-completion.bash
 fi
