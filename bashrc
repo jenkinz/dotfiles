@@ -191,3 +191,5 @@ if [[ "$USER" == '' ]]; then
   # mainly for cygwin terminals. set USER env var if not already set
   USER=$USERNAME
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
