@@ -25,6 +25,7 @@ conditionally_prefix_path /usr/local/mysql/bin
 conditionally_prefix_path /usr/texbin
 conditionally_prefix_path ~/bin
 conditionally_prefix_path ~/bin/private
+conditionally_prefix_path $HOME/.rvm/bin
 
 PATH=.:./bin:${PATH}
 
@@ -63,7 +64,7 @@ CDPATH=.:${CDPATH}
 # fi
 
 ############################################################
-## General development configurations
+
 ###########################################################
 
 if [ `which rbenv 2> /dev/null` ]; then
@@ -191,5 +192,3 @@ if [[ "$USER" == '' ]]; then
   # mainly for cygwin terminals. set USER env var if not already set
   USER=$USERNAME
 fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
