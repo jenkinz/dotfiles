@@ -15,9 +15,6 @@
 (load "bjenkinz/server-mode")
 (load "bjenkinz/shell-mode")
 
-;; Private stuff goes here (TODO)
-;; (load "bjenkinz/private" 'noerror)
-
 (vendor 'ruby-mode)
 ;; (vendor 'rinari)
 (vendor 'maxframe      'mf 'maximize-frame)
