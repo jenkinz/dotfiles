@@ -16,12 +16,8 @@
 (load "bjenkinz/shell-mode")
 
 (vendor 'ruby-mode)
-;; (vendor 'rinari)
 (vendor 'maxframe      'mf 'maximize-frame)
-;; (vendor 'coffee-mode)
-;; (vendor 'haml-mode)
 (vendor 'magit         'magit-status)
-(vendor 'psvn          'svn-status)
 (vendor 'js2-mode      'js2-mode)
 (vendor 'markdown-mode 'markdown-mode)
 (vendor 'inf-ruby      'inf-ruby)
