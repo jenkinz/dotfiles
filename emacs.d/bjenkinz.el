@@ -1,8 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
-(setq custom-file "~/.emacs.d/bjenkinz/custom.el")
-(load custom-file 'noerror)
-
 (load "bjenkinz/theme")
 (load "bjenkinz/env")
 (load "bjenkinz/global")
