@@ -5,6 +5,7 @@
 (load "bjenkinz/global")
 (load "bjenkinz/defuns")
 (load "bjenkinz/bindings")
+(load "bjenkinz/tabs")
 (load "bjenkinz/fonts")
 (load "bjenkinz/utf-8")
 (load "bjenkinz/scratch")
@@ -22,4 +23,5 @@
 (vendor 'markdown-mode 'markdown-mode)
 (vendor 'inf-ruby      'inf-ruby)
 (vendor 'rcodetools    'xmp)
+(vendor 'yasnippet)
 (vendor 'mode-line-bell)
