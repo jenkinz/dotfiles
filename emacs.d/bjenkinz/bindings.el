@@ -26,9 +26,9 @@
 ;; Version control and change related
 ;; (global-set-key [(control f9)]      'rails-svn-status-into-root)  ;; Move to rails mode?
 ;; (global-set-key [(control meta f9)] (lambda () (interactive) (svn-status default-directory)))
-(global-set-key [(control f9)] (lambda () (interactive) (magit-status default-directory)))
-(global-set-key [(f9)]         (lambda () (interactive) (magit-status default-directory)))
-(global-set-key [(meta f9)]    'autotest-switch)  ;; Move to ruby/rails mode?
+(global-set-key [(f6)] (lambda () (interactive) (magit-status default-directory)))
+;; (global-set-key [(f9)]         (lambda () (interactive) (magit-status default-directory)))
+;; (global-set-key [(meta f9)]    'autotest-switch)  ;; Move to ruby/rails mode?
 
 ;; Find matching parens
 (global-set-key (kbd "C-'") 'match-paren)
