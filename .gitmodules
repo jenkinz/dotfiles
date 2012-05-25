@@ -28,3 +28,9 @@
 [submodule "emacs.d/vendor/yasnippet"]
 	path = emacs.d/vendor/yasnippet
 	url = https://github.com/capitaomorte/yasnippet.git
+[submodule "emacs.d/vendor/jdee"]
+	path = emacs.d/vendor/jdee
+	url = https://github.com/emacsmirror/jdee.git
+[submodule "emacs.d/vendor/cedet"]
+	path = emacs.d/vendor/cedet
+	url = https://github.com/emacsmirror/cedet.git
