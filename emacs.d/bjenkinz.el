@@ -15,6 +15,7 @@
 (load "bjenkinz/mac")
 (load "bjenkinz/server-mode")
 (load "bjenkinz/shell-mode")
+(load "bjenkinz/scala")
 
 (vendor 'ruby-mode)
 (vendor 'maxframe      'mf 'maximize-frame)
