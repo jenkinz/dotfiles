@@ -6,6 +6,13 @@
 ;; If there is a tab, make it the size of 2 spaces
 (setq-default tab-width 2)
 
+;; Java mode requires this special hook for the 2 space tab size
+;; (http://www.emacswiki.org/emacs/IndentingJava)
+(add-hook 'java-mode-hook (lambda ()
+                                (setq c-basic-offset 2
+                                      tab-width 2
+                                      indent-tabs-mode nil)))
+
 ;; Mode specific indent sizes
 ;; TODO: Consider putting these in their own mode specific inits
 (setq c-basic-offset 4)
@@ -18,11 +25,11 @@
 
 (setq hippie-expand-try-functions-list
       '(yas/hippie-try-expand
-	try-expand-dabbrev
-	try-expand-dabbrev-all-buffers
-	try-expand-dabbrev-from-kill
-	try-complete-file-name
-	try-complete-lisp-symbol))
+  try-expand-dabbrev
+  try-expand-dabbrev-all-buffers
+  try-expand-dabbrev-from-kill
+  try-complete-file-name
+  try-complete-lisp-symbol))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smart Tab
@@ -42,23 +49,23 @@
   expands it. Else calls `smart-indent'."
   (interactive "P")
   (labels ((smart-tab-must-expand (&optional prefix)
-				  (unless (or (consp prefix)
-					      mark-active)
-				    (looking-at "\\_>"))))
+          (unless (or (consp prefix)
+                mark-active)
+            (looking-at "\\_>"))))
     (cond ((minibufferp)
-	   (minibuffer-complete))
-	  ((smart-tab-must-expand prefix)
-	   (if smart-tab-using-hippie-expand
-	       (hippie-expand prefix)
-	     (dabbrev-expand prefix)))
-	  ((smart-indent)))))
+     (minibuffer-complete))
+    ((smart-tab-must-expand prefix)
+     (if smart-tab-using-hippie-expand
+         (hippie-expand prefix)
+       (dabbrev-expand prefix)))
+    ((smart-indent)))))
 
 (defun smart-indent ()
   "Indents region if mark is active, or current line otherwise."
   (interactive)
   (if mark-active
     (indent-region (region-beginning)
-		   (region-end))
+       (region-end))
     (indent-for-tab-command)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
