@@ -29,7 +29,7 @@
 [remote "origin"]
   push = HEAD
 [github]
-  user = bjenkinz
+  user = jenkinz
 [diff]
   ignoresubmodules = untracked
 [core]
