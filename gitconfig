@@ -34,3 +34,5 @@
   ignoresubmodules = untracked
 [core]
   excludesfile = /Users/bjenkins/.gitignore
+[credential]
+  helper = osxkeychain
