@@ -25,6 +25,7 @@ maxconnections = 1
 type = Gmail
 remoteuser = brian@jenkinz.com
 remotepasseval = get_keychain_pass(account="brian@jenkinz.com", server="imap.gmail.com")
+cert_fingerprint = f3043dd689a2e7dddfbef82703a6c65ea9b634c1
 realdelete = no
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
