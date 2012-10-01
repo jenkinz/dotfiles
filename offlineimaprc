@@ -18,6 +18,8 @@ nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
                             'flagged': '[Gmail]/Starred',
                             'trash':   '[Gmail]/Trash',
                             'archive': '[Gmail]/All Mail',
+                            'important': '[Gmail]/Important',
+                            'spam': '[Gmail]/Spam'
                             }.get(folder, folder)
 
 [Repository BrianJenkins-Remote]
@@ -32,5 +34,7 @@ nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Starred':   'flagged',
                             '[Gmail]/Trash':     'trash',
                             '[Gmail]/All Mail':  'archive',
+                            '[Gmail]/Important': 'important',
+                            '[Gmail]/Spam': 'spam'
                             }.get(folder, folder)
 folderfilter = lambda folder: folder not in ['']
