@@ -139,3 +139,9 @@ set include                          # include message in replies
 set forward_quote                    # include message in forwards
 
 set editor = "emacs"                 # Use terminal emacs to compose email.
+
+# Send Mail
+set from     = "brian@jenkinz.com"
+set sendmail = "/usr/local/bin/msmtp -a brianjenkins"
+set sendmail_wait = 0
+unset record
