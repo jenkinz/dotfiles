@@ -145,3 +145,12 @@ set from     = "brian@jenkinz.com"
 set sendmail = "/usr/local/bin/msmtp -a brianjenkins"
 set sendmail_wait = 0
 unset record
+
+# Postpone (save to drafts) by pressing `p`
+bind compose p postpone-message
+bind index p recall-message
+
+# Integrate with Mac OS X Contacts app
+set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
