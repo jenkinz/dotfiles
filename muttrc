@@ -50,12 +50,12 @@ alternates bjenkins2007@gmail.com bjenkins2000@gmail.com bj@jenkinz.com
 
 # Mailboxes to show in the sidebar.
 mailboxes +brian-jenkinz.com/INBOX \
-          +brian-jenkinz.com/Misc \
-          +brian-jenkinz.com/Receipts \
-          +brian-jenkinz.com/Travel \
           +brian-jenkinz.com/archive \
           +brian-jenkinz.com/sent \
           +brian-jenkinz.com/drafts \
+          +brian-jenkinz.com/Misc \
+          +brian-jenkinz.com/Receipts \
+          +brian-jenkinz.com/Travel \
           +brian-jenkinz.com/spam \
           +brian-jenkinz.com/trash \
 
