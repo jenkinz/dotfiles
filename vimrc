@@ -11,3 +11,5 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
   set number
 endif
+
+set encoding=utf-8
