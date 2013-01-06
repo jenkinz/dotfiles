@@ -26,6 +26,16 @@ fi
 alias ll="ls -lh"
 
 ############################################################
+# Preview (file contents)
+############################################################
+p ()
+{
+  cat "$@" | less;
+}
+
+alias v="vim"
+
+############################################################
 ## Mutt (email client)
 ############################################################
 alias mutt='cd ~/Downloads && mutt' # cd to Downloads before launching, which is where attachments etc. will be saved
