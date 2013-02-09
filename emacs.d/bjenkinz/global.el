@@ -33,6 +33,10 @@
 
 ;; Line-wrapping
 (set-default 'fill-column 80)
+;; Turn on auto fill for all major modes
+(setq-default auto-fill-function 'do-auto-fill)
+;; Turn on auto fill for text mode
+;(add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;; Prevent the annoying beep on errors
 (setq visible-bell t)
