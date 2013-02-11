@@ -1,12 +1,14 @@
 ;;; Fonts
 
+(set-default-font "-apple-Menlo-medium-normal-normal-*-15-*-*-*-m-0-iso10646-")
+
 ;; From: http://community.schemewiki.org/cgi-bin/scheme.cgi?Emacs
-(and window-system
-     (create-fontset-from-fontset-spec
-      (concat
-       "-apple-monaco-medium-r-normal--12-*-*-*-*-*-fontset-monaco,"
-       "ascii:-apple-monaco-medium-r-normal--12-100-*-*-m-100-mac-roman"))
-     )
+;;(and window-system
+;;     (create-fontset-from-fontset-spec
+;;      (concat
+;;       "-apple-monaco-medium-r-normal--12-*-*-*-*-*-fontset-monaco,"
+;;       "ascii:-apple-monaco-medium-r-normal--12-100-*-*-m-100-mac-roman"))
+;;     )
 
 ;; To change a font size globally:
 ;; (set-face-attribute 'default nil :height 360)
