@@ -18,7 +18,7 @@
 (load "bjenkinz/scala")
 
 (vendor 'ruby-mode)
-(vendor 'maxframe      'mf 'maximize-frame)
+;(vendor 'maxframe      'mf 'maximize-frame)
 (vendor 'magit         'magit-status)
 (vendor 'js2-mode      'js2-mode)
 (vendor 'markdown-mode 'markdown-mode)
