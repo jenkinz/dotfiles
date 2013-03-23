@@ -81,13 +81,16 @@ alias whotunes='lsof -r 2 -n -P -F n -c iTunes -a -i TCP@`hostname`:3689'
 ############################################################
 
 if [ -f /Applications/Emacs.app/Contents/MacOS/Emacs ]; then
-  #alias emacs='TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/Emacs'
   #alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t'
   alias emacsclient='/usr/local/Cellar/emacs/HEAD/bin/emacsclient'
 fi
 
-alias e='emacsclient'
-alias et='e -t' # open an emacs frame on the current terminal window
+e ()
+{
+  emacsclient "$@" & # send to emacs server in the background
+}
+
+alias et='emacsclient -t' # open an emacs frame on the current terminal window
 
 ############################################################
 ## Misc
