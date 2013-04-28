@@ -8,6 +8,7 @@
 (load "env")
 (load "global")
 (load "bindings")
+(load "packages")
 (load "tabs")
 (load "fonts")
 (load "utf-8")
@@ -15,12 +16,15 @@
 (load "diff")
 (load "mac")
 
-; Package management
-(require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
-(package-initialize)
+; Python mode - jedi
+(add-hook 'python-mode-hook 'auto-complete-mode)
+(add-hook 'python-mode-hook 'jedi:ac-setup)
+
+; Flycheck mode
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+; Autopair
+(autopair-global-mode t)
 
 ; Default theme
 (load-theme 'zenburn t)
