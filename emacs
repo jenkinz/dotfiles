@@ -16,13 +16,12 @@
 (load "diff")
 (load "mac")
 
-; Python mode - jedi
+; Following http://caisah.info/emacs-for-python/ below:
+; Python mode
 (add-hook 'python-mode-hook 'auto-complete-mode)
 (add-hook 'python-mode-hook 'jedi:ac-setup)
-
 ; Flycheck mode
 (add-hook 'after-init-hook #'global-flycheck-mode)
-
 ; Autopair
 (autopair-global-mode t)
 

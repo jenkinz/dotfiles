@@ -9,10 +9,10 @@
 home = File.expand_path('~')
 
 Dir['*'].each do |file|
-  next if file =~ /install/ || file =~ /README/
+  next if file =~ /init/ || file =~ /README/
   target = File.join(home, ".#{file}")
   `ln -ns #{File.expand_path file} #{target}`
 end
 
-`git submodule sync`
-`git submodule update --init --recursive`
+#`git submodule sync`
+#`git submodule update --init --recursive`
