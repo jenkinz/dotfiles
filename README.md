@@ -6,8 +6,8 @@ Installing
 - `cd ~/.dotfiles`
 - `./install.rb`
 
-`install.rb` will symlink everything appropriately to your home directory except for files in `install/`, which is intended for
-one-time initializations and should be run manually.
+`install.rb` will symlink everything appropriately to your home directory except
+for files in `init/`, which is intended for one-time initializations and should be run manually.
 
 Running `install.rb` also updates the git submodules within `emacs.d/vendor`.
 
