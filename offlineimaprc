@@ -13,13 +13,23 @@ postsynchook = notmuch new
 [Repository BrianJenkins-Local]
 type = Maildir
 localfolders = ~/.mail/brian-jenkinz.com
-nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
-                            'sent':    '[Gmail]/Sent Mail',
-                            'flagged': '[Gmail]/Starred',
-                            'trash':   '[Gmail]/Trash',
-                            'archive': '[Gmail]/All Mail',
-                            'important': '[Gmail]/Important',
-                            'spam': '[Gmail]/Spam'
+nametrans = lambda folder: {'Drafts':        '[Gmail]/Drafts',
+                            'Sent_Mail':     '[Gmail]/Sent Mail',
+                            'Starred':       '[Gmail]/Starred',
+                            'Trash':         '[Gmail]/Trash',
+                            'All_Mail':      '[Gmail]/All Mail',
+                            'Important':     '[Gmail]/Important',
+                            'Priority':      '[Gmail]/Priority',
+                            'Spam':          '[Gmail]/Spam',
+                            'MB':            '[Mailbox]',
+                            'MB.Later':      '[Mailbox]/Later',
+                            'MB.Receipts':   '[Mailbox]/Receipts',
+                            'MB.Recipes':    '[Mailbox]/Recipes',
+                            'MB.To_Buy':     '[Mailbox]/To Buy',
+                            'MB.To_Read':    '[Mailbox]/To Read',
+                            'MB.To_Watch':   '[Mailbox]/To Watch',
+                            'MB.Travel':     '[Mailbox]/Travel',
+                            'MB.WP_Backups': '[Mailbox].WP Backups'
                             }.get(folder, folder)
 
 [Repository BrianJenkins-Remote]
@@ -27,14 +37,24 @@ maxconnections = 1
 type = Gmail
 remoteuser = brian@jenkinz.com
 remotepasseval = get_keychain_pass(account="brian@jenkinz.com", server="imap.gmail.com")
-cert_fingerprint = 6d1b5b5ee0180ab493b71d3b94534b5ab937d042
+cert_fingerprint = b0ba392bba326e6feb1add4d04fa0fb86cd173fa
 realdelete = no
-nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
-                            '[Gmail]/Sent Mail': 'sent',
-                            '[Gmail]/Starred':   'flagged',
-                            '[Gmail]/Trash':     'trash',
-                            '[Gmail]/All Mail':  'archive',
-                            '[Gmail]/Important': 'important',
-                            '[Gmail]/Spam': 'spam'
+nametrans = lambda folder: {'[Gmail]/Drafts':       'Drafts',
+                            '[Gmail]/Sent Mail':    'Sent_Mail',
+                            '[Gmail]/Starred':      'Starred',
+                            '[Gmail]/Trash':        'Trash',
+                            '[Gmail]/All Mail':     'All_Mail',
+                            '[Gmail]/Important':    'Important',
+                            '[Gmail]/Spam':         'Spam',
+                            '[Gmail]/Priority':			'Priority',
+                            '[Mailbox]':						'MB',
+                            '[Mailbox]/Later':      'MB.Later',
+                            '[Mailbox]/Receipts':   'MB.Receipts',
+                            '[Mailbox]/Recipes':    'MB.Recipes',
+                            '[Mailbox]/To Buy':     'MB.To_Buy',
+                            '[Mailbox]/To Read':    'MB.To_Read',
+                            '[Mailbox]/To Watch':   'MB.To_Watch',
+                            '[Mailbox]/Travel':     'MB.Travel',
+                            '[Mailbox]/WP Backups': 'MB.WP_Backups'
                             }.get(folder, folder)
 folderfilter = lambda folder: folder not in ['']

@@ -50,18 +50,24 @@ alternates bjenkins2007@gmail.com bjenkins2000@gmail.com bj@jenkinz.com
 
 # Mailboxes to show in the sidebar.
 mailboxes +brian-jenkinz.com/INBOX \
-          +brian-jenkinz.com/archive \
-          +brian-jenkinz.com/sent \
-          +brian-jenkinz.com/drafts \
-          +brian-jenkinz.com/Misc \
-          +brian-jenkinz.com/Receipts \
-          +brian-jenkinz.com/Travel \
-          +brian-jenkinz.com/spam \
-          +brian-jenkinz.com/trash \
+          +brian-jenkinz.com/All_Mail \
+          +brian-jenkinz.com/Sent_Mail \
+          +brian-jenkinz.com/Starred \
+          +brian-jenkinz.com/Drafts \
+          +brian-jenkinz.com/Spam \
+          +brian-jenkinz.com/Trash \
+          +brian-jenkinz.com/MB.Later \
+          +brian-jenkinz.com/MB.Receipts \
+          +brian-jenkinz.com/MB.Recipes \
+          +brian-jenkinz.com/MB.To_Buy \
+          +brian-jenkinz.com/MB.To_Read \
+          +brian-jenkinz.com/MB.To_Read \
+          +brian-jenkinz.com/MB.To_Watch \
+          +brian-jenkinz.com/MB.Travel \
 
 # Other special folders.
-set mbox      = "+brian-jenkinz.com/archive"
-set postponed = "+brian-jenkinz.com/drafts"
+set mbox      = "+brian-jenkinz.com/All_Mail"
+set postponed = "+brian-jenkinz.com/Drafts"
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
