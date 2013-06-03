@@ -1,7 +1,7 @@
 #######################################################
 # Git configuration
 #
-#  Instead of placing your Github token in here, create
+#  Instead of placing the Github token in here, create
 #   a keychain item called "github.token". The token will
 #   be set to the GITHUB_TOKEN environment variable when
 #   `bashrc` is run.
