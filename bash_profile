@@ -9,5 +9,6 @@ if [ -e ~/.bash_local ] ; then
   . ~/.bash_local
 fi
 
-
-[[ -s "/Users/bjenkins/.rvm/scripts/rvm" ]] && source "/Users/bjenkins/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+if [[ `uname` == 'Darwin' ]]; then
+  [[ -s "/Users/bjenkins/.rvm/scripts/rvm" ]] && source "/Users/bjenkins/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
