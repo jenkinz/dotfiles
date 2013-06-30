@@ -17,6 +17,7 @@ function conditionally_prefix_path {
   fi
 }
 
+# All UNIX/Linux:
 conditionally_prefix_path /usr/local/bin
 conditionally_prefix_path /usr/local/sbin
 conditionally_prefix_path /usr/local/share/python
@@ -25,7 +26,16 @@ conditionally_prefix_path /usr/local/mysql/bin
 conditionally_prefix_path /usr/texbin
 conditionally_prefix_path ~/bin
 conditionally_prefix_path ~/bin/private
-conditionally_prefix_path $HOME/.rvm/bin
+
+# Mac OS X:
+if [[ `uname` == 'Darwin' ]]; then
+    conditionally_prefix_path $HOME/.rvm/bin
+fi
+
+# Linux:
+if [[ `uname` == 'Linux' ]]; then
+    conditionally_prefix_path /opt/slickedit/bin
+fi
 
 PATH=.:./bin:${PATH}
 
