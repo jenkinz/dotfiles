@@ -1,9 +1,8 @@
 .DS_Store
 
-dotfiles.vpj
-dotfiles.vpw
-dotfiles.vtg
-dotfiles.vpwhistu
+*.vpw
+*.vtg
+*.vpwhistu
 
 emacs.d/auto-save-list
 emacs.d/backups
