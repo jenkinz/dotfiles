@@ -154,7 +154,7 @@ fi
 ## Optional shell behavior
 ############################################################
 
-export EDITOR="emacsclient -t"
+export EDITOR="vim"
 
 ############################################################
 ## History
