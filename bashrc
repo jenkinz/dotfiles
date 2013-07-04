@@ -154,7 +154,12 @@ fi
 ## Optional shell behavior
 ############################################################
 
-export EDITOR="vim"
+if [[ `uname` == 'Darwin' ]]; then
+    export EDITOR="emacsclient -t"
+fi
+if [[ `uname` == 'Linux' ]]; then
+    export EDITOR="vim"
+fi
 
 ############################################################
 ## History
