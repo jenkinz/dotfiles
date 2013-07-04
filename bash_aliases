@@ -63,7 +63,9 @@ alias dstore-clean='find . -type f -name .DS_Store -print0 | xargs -0 rm'
 # Track who is listening to your iTunes music
 alias whotunes='lsof -r 2 -n -P -F n -c iTunes -a -i TCP@`hostname`:3689'
 
-# Opus Make
+############################################################
+## Opus Make
+############################################################
 if [[ `uname` == 'Darwin' ]]; then
   alias mk='wine ~/bin/omake/omake.exe'
 fi
