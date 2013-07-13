@@ -8,6 +8,7 @@
 # Date: July 13, 2013
 
 FILESPEC =
+EXCLUDES = README.md dotfiles.vpj init makefile .gitignore .gitmodules
 
 ifeq ($(OS),Windows_NT)
     FILESPEC = windows/
@@ -21,12 +22,10 @@ else
     endif
 endif
 
-EXCLUDES = README.md dotfiles.vpj init install.rb makefile .gitignore .gitmodules
 FILES = $(realpath $(filter-out $(EXCLUDES), $(wildcard $(FILESPEC)*)))
 
 SYMLINK_CMD = ln -nsf $(file) ~/$(addprefix ., $(notdir $(file)))
 
 all .PHONY : $(FILES)
-
 	@@$(foreach file, $(FILES), echo $(SYMLINK_CMD) && $(SYMLINK_CMD);)
 
