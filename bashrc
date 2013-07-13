@@ -35,6 +35,7 @@ fi
 # Linux:
 if [[ `uname` == 'Linux' ]]; then
     conditionally_prefix_path /opt/slickedit/bin
+
 fi
 
 PATH=.:./bin:${PATH}
