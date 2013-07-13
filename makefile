@@ -7,11 +7,26 @@
 # Brian Jenkins <bj@jenkinz.com>
 # Date: July 13, 2013
 
-EXCLUDES = README.md dotfiles.vpj install.rb makefile .gitignore .gitmodules
-FILES = $(realpath $(filter-out $(EXCLUDES), $(wildcard *)))
+FILESPEC =
+
+ifeq ($(OS),Windows_NT)
+    FILESPEC = windows/
+else
+    UNAME_S := $(shell uname -s)
+    ifeq ($(UNAME_S),Linux)
+        FILESPEC = linux/
+    endif
+    ifeq ($(UNAME_S),Darwin)
+        FILESPEC = macosx/
+    endif
+endif
+
+EXCLUDES = README.md dotfiles.vpj init install.rb makefile .gitignore .gitmodules
+FILES = $(realpath $(filter-out $(EXCLUDES), $(wildcard $(FILESPEC)*)))
+
+SYMLINK_CMD = ln -nsf $(file) ~/$(addprefix ., $(notdir $(file)))
 
 all .PHONY : $(FILES)
-	@@echo "Symlinking to home directory..."
-	@@$(foreach file, $(FILES), ln -nsf $(file) ~/$(notdir $(file));)
-	@@echo "...Done"
+
+	@@$(foreach file, $(FILES), echo $(SYMLINK_CMD) && $(SYMLINK_CMD);)
 
