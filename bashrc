@@ -2,30 +2,28 @@
 ## file *should generate no output* or it will break the scp and rcp commands.
 ############################################################
 
-if [ -e /etc/bashrc ] ; then
-  . /etc/bashrc
-fi
-
 ############################################################
 ## PATH
 ############################################################
 
 function conditionally_prefix_path {
-  local dir=$1
-  if [ -d $dir ]; then
-    PATH="$dir:${PATH}"
-  fi
+    local dir=$1
+    if [ -d $dir ]; then
+        PATH="$dir:${PATH}"
+    fi
 }
 
 # All UNIX/Linux:
-conditionally_prefix_path /usr/local/bin
-conditionally_prefix_path /usr/local/sbin
-conditionally_prefix_path /usr/local/share/python
-conditionally_prefix_path /usr/local/share/npm/bin
-conditionally_prefix_path /usr/local/mysql/bin
-conditionally_prefix_path /usr/texbin
-conditionally_prefix_path ~/bin
-conditionally_prefix_path ~/bin/private
+if [[ `uname` == 'Darwin' || `uname` == 'Linux' ]]; then
+    conditionally_prefix_path /usr/local/bin
+    conditionally_prefix_path /usr/local/sbin
+    conditionally_prefix_path /usr/local/share/python
+    conditionally_prefix_path /usr/local/share/npm/bin
+    conditionally_prefix_path /usr/local/mysql/bin
+    conditionally_prefix_path /usr/texbin
+    conditionally_prefix_path ~/bin
+    conditionally_prefix_path ~/bin/private
+fi
 
 # Mac OS X:
 if [[ `uname` == 'Darwin' ]]; then
@@ -35,7 +33,6 @@ fi
 # Linux:
 if [[ `uname` == 'Linux' ]]; then
     conditionally_prefix_path /opt/slickedit/bin
-
 fi
 
 PATH=.:./bin:${PATH}
@@ -45,45 +42,30 @@ PATH=.:./bin:${PATH}
 ############################################################
 
 function conditionally_prefix_manpath {
-  local dir=$1
-  if [ -d $dir ]; then
-    MANPATH="$dir:${MANPATH}"
-  fi
+    local dir=$1
+    if [ -d $dir ]; then
+        MANPATH="$dir:${MANPATH}"
+    fi
 }
 
 conditionally_prefix_manpath /usr/local/man
 conditionally_prefix_manpath ~/man
 
 ############################################################
-## Other paths
+## GIT
 ############################################################
-
-function conditionally_prefix_cdpath {
-  local dir=$1
-  if [ -d $dir ]; then
-    CDPATH="$dir:${CDPATH}"
-  fi
-}
-
-conditionally_prefix_cdpath ~/work
-
-CDPATH=.:${CDPATH}
-
-# Set INFOPATH so it includes users' private info if it exists
-# if [ -d ~/info ]; then
-#   INFOPATH="~/info:${INFOPATH}"
-# fi
-
-############################################################
-
-###########################################################
-
-if [ `which rbenv 2> /dev/null` ]; then
-  eval "$(rbenv init -)"
-fi
 
 if [ `which security 2> /dev/null` ]; then
   export GITHUB_TOKEN=`security 2>&1 >/dev/null find-generic-password -gs github.token | ruby -e 'print $1 if STDIN.gets =~ /^password: \"(.*)\"$/'`
+fi
+
+if [[ `uname` == 'Darwin' ]]; then
+    `git config --global credential.helper osxkeychain`
+fi
+
+# Linux:
+if [[ `uname` == 'Linux' ]]; then
+    `git config --global credential.helper cache`
 fi
 
 ############################################################
