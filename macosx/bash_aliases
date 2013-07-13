@@ -12,16 +12,9 @@ add-alias ()
 ## List
 ############################################################
 
-if [[ `uname` == 'Darwin' ]]; then
-  alias ls="ls -G"
-  # good for dark backgrounds
-  export LSCOLORS=gxfxcxdxbxegedabagacad
-else
-  alias ls="ls --color=auto"
-  # good for dark backgrounds
-  export LS_COLORS='no=00:fi=00:di=00;36:ln=00;35:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00;31:'
-  # For LS_COLORS template: $ dircolors /etc/DIR_COLORS
-fi
+alias ls="ls -G"
+# good for dark backgrounds
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
 alias ll="ls -lh"
 
@@ -38,9 +31,8 @@ alias v="vim"
 ############################################################
 ## Mutt (email client)
 ############################################################
-if [[ `uname` == 'Darwin' ]]; then
-  alias mutt='cd ~/Downloads && mutt' # cd to Downloads before launching, which is where attachments etc. will be saved
-fi
+
+alias mutt='cd ~/Downloads && mutt' # cd to Downloads before launching, which is where attachments etc. will be saved
 
 ############################################################
 ## Git
@@ -66,9 +58,8 @@ alias whotunes='lsof -r 2 -n -P -F n -c iTunes -a -i TCP@`hostname`:3689'
 ############################################################
 ## Opus Make
 ############################################################
-if [[ `uname` == 'Darwin' ]]; then
-  alias mk='wine ~/bin/omake/omake.exe'
-fi
+
+alias mk='wine ~/bin/omake/omake.exe'
 
 ############################################################
 ## Ruby
