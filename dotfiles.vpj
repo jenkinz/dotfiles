@@ -488,6 +488,7 @@
         <F N="emacs"/>
         <F N="git-completion.bash"/>
         <F N="gitconfig"/>
+        <F N="gitconfig_main"/>
         <F N="gitignore"/>
         <F N="install.rb"/>
         <F N="msmtprc"/>
