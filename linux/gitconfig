@@ -1,12 +1,6 @@
 #######################################################
-# Git configuration
-#
-#  Instead of placing the Github token in here, create
-#   a keychain item called "github.token". The token will
-#   be set to the GITHUB_TOKEN environment variable when
-#   `bashrc` is run.
+# Git configuration - Linux
 #######################################################
-
 [user]
   email = bj@jenkinz.com
   name = Brian Jenkins
