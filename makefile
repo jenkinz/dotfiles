@@ -1,10 +1,9 @@
 # Symlinks dotfiles to the home directory.
-#
-# This makefile is idempotent.
-#
 # It will not symlink any files in the EXCLUDES list.
 #
-# Brian Jenkins <bj@jenkinz.com>
+# On Windows, standard Unix tools must be installed and in the Path.
+#
+# Author: Brian Jenkins <bj@jenkinz.com>
 # Date: July 13, 2013
 
 FILESPEC =
