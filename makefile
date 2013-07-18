@@ -21,7 +21,7 @@ else
     endif
 endif
 
-FILES = $(realpath $(filter-out $(EXCLUDES), $(wildcard $(FILESPEC)*)))
+FILES := $(realpath $(filter-out $(EXCLUDES), $(wildcard $(FILESPEC)*)))
 
 SYMLINK_CMD = ln -nsf $(file) ~/$(addprefix ., $(notdir $(file)))
 
