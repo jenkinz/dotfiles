@@ -1,73 +1,74 @@
 <!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
 <Project
-	Version="10.0"
-	VendorName="SlickEdit"
-	TemplateName="(Other)"
-	WorkingDir=".">
-	<Config
-		Name="Release"
-		OutputFile=""
-		CompilerConfigName="">
-		<Menu>
-			<Target
-				Name="Build"
-				MenuCaption="&amp;Build"
-				CaptureOutputWith="ProcessBuffer"
-				SaveOption="SaveWorkspaceFiles"
-				RunFromDir="%rw">
-				<Exec CmdLine="make"/>
-			</Target>
-		</Menu>
-	</Config>
-	<CustomFolders>
-		<Folder
-			Name="Source Files"
-			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm">
-		</Folder>
-		<Folder
-			Name="Header Files"
-			Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
-		</Folder>
-		<Folder
-			Name="Resource Files"
-			Filters="*.ico;*.cur;*.dlg"/>
-		<Folder
-			Name="Bitmaps"
-			Filters="*.bmp"/>
-		<Folder
-			Name="Other Files"
-			Filters="">
-		</Folder>
-	</CustomFolders>
-	<Files AutoFolders="DirectoryView">
-		<Folder Name="linux">
-			<F N="linux/bash_aliases"/>
-			<F N="linux/bash_completion"/>
-			<F N="linux/bash_profile"/>
-			<F N="linux/bashrc"/>
-			<F N="linux/gitconfig"/>
-			<F N="linux/gitignore"/>
-			<F N="linux/vimrc"/>
-		</Folder>
-		<Folder Name="macosx">
-			<F N="macosx/bash_aliases"/>
-			<F N="macosx/bash_completion"/>
-			<F N="macosx/bash_profile"/>
-			<F N="macosx/bashrc"/>
-			<F N="macosx/emacs"/>
-			<F N="macosx/git-completion.bash"/>
-			<F N="macosx/gitconfig"/>
-			<F N="macosx/gitignore"/>
-			<F N="macosx/msmtprc"/>
-			<F N="macosx/muttrc"/>
-			<F N="macosx/offlineimap.py"/>
-			<F N="macosx/offlineimaprc"/>
-			<F N="macosx/urlview"/>
-			<F N="macosx/vimrc"/>
-		</Folder>
-		<F N="README.md"/>
-		<F
-			N="makefile"
-			Type="Makefile"/>
-	</Files>
+    Version="10.0"
+    VendorName="SlickEdit"
+    TemplateName="(Other)"
+    WorkingDir="."
+    VCSProject="Git:">
+    <Config
+        Name="Release"
+        OutputFile=""
+        CompilerConfigName="">
+        <Menu>
+            <Target
+                Name="Build"
+                MenuCaption="&amp;Build"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine="make"/>
+            </Target>
+        </Menu>
+    </Config>
+    <CustomFolders>
+        <Folder
+            Name="Source Files"
+            Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm">
+        </Folder>
+        <Folder
+            Name="Header Files"
+            Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+        </Folder>
+        <Folder
+            Name="Resource Files"
+            Filters="*.ico;*.cur;*.dlg"/>
+        <Folder
+            Name="Bitmaps"
+            Filters="*.bmp"/>
+        <Folder
+            Name="Other Files"
+            Filters="">
+        </Folder>
+    </CustomFolders>
+    <Files AutoFolders="DirectoryView">
+        <Folder Name="linux">
+            <F N="linux/bash_aliases"/>
+            <F N="linux/bash_completion"/>
+            <F N="linux/bash_profile"/>
+            <F N="linux/bashrc"/>
+            <F N="linux/gitconfig"/>
+            <F N="linux/gitignore"/>
+            <F N="linux/vimrc"/>
+        </Folder>
+        <Folder Name="macosx">
+            <F N="macosx/bash_aliases"/>
+            <F N="macosx/bash_completion"/>
+            <F N="macosx/bash_profile"/>
+            <F N="macosx/bashrc"/>
+            <F N="macosx/emacs"/>
+            <F N="macosx/git-completion.bash"/>
+            <F N="macosx/gitconfig"/>
+            <F N="macosx/gitignore"/>
+            <F N="macosx/msmtprc"/>
+            <F N="macosx/muttrc"/>
+            <F N="macosx/offlineimap.py"/>
+            <F N="macosx/offlineimaprc"/>
+            <F N="macosx/urlview"/>
+            <F N="macosx/vimrc"/>
+        </Folder>
+        <F N="README.md"/>
+        <F
+            N="makefile"
+            Type="Makefile"/>
+    </Files>
 </Project>
