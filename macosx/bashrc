@@ -40,28 +40,6 @@ function conditionally_prefix_manpath {
 conditionally_prefix_manpath /usr/local/man
 conditionally_prefix_manpath ~/man
 
-############################################################
-## GIT
-############################################################
-
-#if [ `which security 2> /dev/null` ]; then
-#  export GITHUB_TOKEN=`security 2>&1 >/dev/null find-generic-password -gs github.token | ruby -e 'print $1 if STDIN.gets =~ /^password: \"(.*)\"$/'`
-#fi
-
-############################################################
-## Terminal behavior
-############################################################
-
-# Change the window title of X terminals
-case $TERM in
-  xterm*|rxvt|Eterm|eterm)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
-    ;;
-  screen)
-    PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
-    ;;
-esac
-
 # Show the git branch and dirty state in the prompt.
 # Borrowed from: http://henrik.nyh.se/2008/12/git-dirty-prompt
 function parse_git_dirty {
@@ -81,35 +59,7 @@ else
   }
 fi
 
-if [ `which rbenv 2> /dev/null` ]; then
-  function ruby_prompt {
-    echo $(rbenv version-name)
-  }
-elif [ `which ruby 2> /dev/null` ]; then
-  function ruby_prompt {
-    echo $(ruby --version | cut -d' ' -f2)
-  }
-else
-  function ruby_prompt {
-    echo ""
-  }
-fi
-
-if [ `which rbenv-gemset 2> /dev/null` ]; then
-  function gemset_prompt {
-    local gemset=$(rbenv gemset active 2> /dev/null)
-    if [ $gemset ]; then
-      echo " {gemset}"
-    fi
-  }
-else
-  function gemset_prompt {
-    echo ""
-  }
-fi
-
 if [ -n "$BASH" ]; then
-  #export PS1='\[\033[32m\]\n[\s: \w] ($(ruby_prompt)$(gemset_prompt)) $(git_prompt)\n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
   export PS1='\[\033[32m\]\n[\s: \w] $(git_prompt)\n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
 fi
 
