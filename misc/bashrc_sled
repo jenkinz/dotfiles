@@ -1,0 +1,8 @@
+################################################################################
+# Custom bashrc file for SlickEdit
+#
+# This file is loaded via `/bin/bash -i --rcfile ...`
+# (see the def_build_shell macro in SlickEdit)
+################################################################################
+
+export PS1='bash: [\w]$ '
