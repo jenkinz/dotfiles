@@ -144,7 +144,7 @@ set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
 
-set editor = "emacsclient -t"        # Use terminal emacs to compose email.
+set editor = "vim"                   # Use vim to compose email.
 
 # Send Mail
 set from     = "bjenkins2007@gmail.com"
