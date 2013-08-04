@@ -18,3 +18,7 @@ killall Dock
 # Use AirDrop over every interface
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
+# Add /usr/local/bin to PATH for GUI apps 
+# (https://github.com/mxcl/homebrew/wiki/FAQ#my-mac-apps-dont-find-usrlocalbin-utilities)
+launchctl setenv PATH /usr/local/bin:$PATH
+
