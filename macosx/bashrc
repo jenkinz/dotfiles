@@ -115,3 +115,11 @@ if [[ "$USER" == '' ]]; then
   # mainly for cygwin terminals. set USER env var if not already set
   USER=$USERNAME
 fi
+
+############################################################
+## Load RVM into shell as a function and more
+############################################################
+if [ -f ~/.rvm/scripts/rvm ]; then
+    source ~/.rvm/scripts/rvm
+fi
+
