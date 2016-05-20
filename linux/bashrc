@@ -19,8 +19,21 @@ conditionally_prefix_path /usr/local/mysql/bin
 conditionally_prefix_path /usr/texbin
 conditionally_prefix_path ~/bin
 conditionally_prefix_path /opt/slickedit/bin
+conditionally_prefix_path /opt/subl_2
+conditionally_prefix_path /opt/ghs/multi_616/
+conditionally_prefix_path /opt/pycharm-2016.1.3/bin
 
 PATH=.:./bin:${PATH}
+
+export VSLICKXNOPLUSNEWMSG=1
+
+#export VECTORCAST_DIR=/opt/vectorcast
+export VECTOR_LICENSE_FILE=/opt/vectorcast/vector-DEMO.lic
+
+# BUILD OPTIONS
+export GPU_DESC=avilon
+export PLATFORM=avdisp
+export BD_REMOTE_IP_ADDR=10.0.1.26
 
 ############################################################
 ## MANPATH
@@ -108,6 +121,9 @@ if [ -n "$BASH" ]; then
   #export PS1='\[\033[32m\]\n[\s: \w] ($(ruby_prompt)$(gemset_prompt)) $(git_prompt)\n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
   export PS1='\[\033[32m\]\n[\s: \w] $(git_prompt)\n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
 fi
+
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
 
 ############################################################
 ## Optional shell behavior

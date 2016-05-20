@@ -13,3 +13,4 @@ endif
 
 set encoding=utf-8
 
+highlight Search guibg='Purple' guifg='NONE'

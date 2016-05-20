@@ -1,8 +1,27 @@
 ################################################################################
 # Custom bashrc file for SlickEdit
 #
-# This file is loaded via `/bin/bash -i --rcfile ...`
-# (see the def_build_shell macro in SlickEdit)
+# This file is loaded via `/bin/bash --rcfile </path/to/bashrc_sled> -i ...`
+# (set this to the def_build_shell macro in SlickEdit, then relaunch)
 ################################################################################
 
-export PS1='bash: [\w]$ '
+# Show the git branch and dirty state in the prompt.
+# Borrowed from: http://henrik.nyh.se/2008/12/git-dirty-prompt
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
+}
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+if [ `which git 2> /dev/null` ]; then
+  function git_prompt {
+    parse_git_branch
+  }
+else
+  function git_prompt {
+    echo ""
+  }
+fi
+
+export PS1='bash: [\w] ($(git_prompt)) $ '
