@@ -26,6 +26,7 @@
     user = jenkinz
 [diff]
     ignoresubmodules = untracked
+	tool = bc3
 [core]
     excludesfile = /Users/bjenkins/.gitignore
     editor = vim
