@@ -20,6 +20,7 @@
     pager = true
 [merge]
     summary = true
+	tool = opendiff
 [remote "origin"]
     push = HEAD
 [github]
@@ -32,3 +33,5 @@
     editor = vim
 [credential]
     helper = osxkeychain
+[difftool]
+	prompt = false

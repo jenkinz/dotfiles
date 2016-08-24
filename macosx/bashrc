@@ -19,12 +19,13 @@ conditionally_prefix_path /usr/local/share/npm/bin
 conditionally_prefix_path /usr/local/mysql/bin
 conditionally_prefix_path /usr/texbin
 conditionally_prefix_path ~/bin
-conditionally_prefix_path ~/bin/codecheck/bin
-conditionally_prefix_path ~/bin/flint/bin
 conditionally_prefix_path $HOME/.rvm/bin
-conditionally_prefix_path /Applications/SlickEdit2013.app/Contents/MacOS
-conditionally_prefix_path /Applications/AffinicDebugger.app/Contents/MacOS
-#alias adg=/Applications/Affinic\ Debugger\ GUI.app/Contents/MacOS/adg
+conditionally_prefix_path /usr/local/mysql/bin
+
+export I386_ELF_GCC_PREFIX=/opt/cross/i386-elf-gcc_toolchain
+export I386_ELF_GCC_VERSION=5.2.0
+
+export SAGE_HOME=/opt/sage_edk
 
 PATH=.:./bin:${PATH}
 
@@ -45,27 +46,61 @@ function conditionally_prefix_manpath {
 conditionally_prefix_manpath /usr/local/man
 conditionally_prefix_manpath ~/man
 
-# Show the git branch and dirty state in the prompt.
-# Borrowed from: http://henrik.nyh.se/2008/12/git-dirty-prompt
-function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo "*"
-}
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
-}
+############################################################
+## BASH-GIT-PROMPT
+############################################################
+# Set config variables first
+GIT_PROMPT_ONLY_IN_REPO=1
 
-if [ `which git 2> /dev/null` ]; then
-  function git_prompt {
-    parse_git_branch
-  }
+# GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
+
+# GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
+# GIT_PROMPT_SHOW_UNTRACKED_FILES=all # can be no, normal or all; determines counting of untracked files
+
+# GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # uncomment to avoid printing the number of changed files
+
+# GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
+
+# GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
+# GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
+
+# as last entry source the gitprompt script
+# GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
+# GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
+# GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
+
+# Load bash-git-prompt:
+if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+    GIT_PROMPT_THEME=Default
+    source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+#fi
 else
-  function git_prompt {
-    echo ""
-  }
-fi
+    ###
+    ## USE OLD PROMPT :
+    ###
+    # Show the git branch and dirty state in the prompt.
+    # Borrowed from: http://henrik.nyh.se/2008/12/git-dirty-prompt
+    function parse_git_dirty {
+      [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
+    }
+    function parse_git_branch {
+      git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+    }
 
-if [ -n "$BASH" ]; then
-  export PS1='\[\033[32m\]\n\s: [\w] $(git_prompt)\n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
+    if [ `which git 2> /dev/null` ]; then
+      function git_prompt {
+        parse_git_branch
+      }
+    else
+      function git_prompt {
+        echo ""
+      }
+    fi
+
+    if [ -n "$BASH" ]; then
+      export PS1='\[\033[32m\]\n\s: [\w] $(git_prompt)\n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
+    fi
+
 fi
 
 ############################################################
