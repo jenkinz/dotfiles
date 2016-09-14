@@ -77,6 +77,11 @@ esac
 ############################################################
 ## BASH-GIT-PROMPT
 ############################################################
+
+if [ -n "$BASH" ]; then
+  export PS1='\[\033[32m\]\n[\s: \w] \n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
+fi
+
 GIT_PROMPT_ONLY_IN_REPO=1
 if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
   GIT_PROMPT_THEME=Default
