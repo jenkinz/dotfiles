@@ -34,4 +34,7 @@
 [credential]
     helper = osxkeychain
 [difftool]
-	prompt = false
+    prompt = false
+[filter "rcs-keywords"]
+    clean  = .git_filters/rcs-keywords.clean
+    smudge = .git_filters/rcs-keywords.smudge %f
