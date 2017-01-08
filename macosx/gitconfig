@@ -38,3 +38,8 @@
 [filter "rcs-keywords"]
     clean  = .git_filters/rcs-keywords.clean
     smudge = .git_filters/rcs-keywords.smudge %f
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
