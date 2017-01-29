@@ -20,14 +20,14 @@
     pager = true
 [merge]
     summary = true
-	tool = opendiff
+    tool = bc3
 [remote "origin"]
     push = HEAD
 [github]
     user = jenkinz
 [diff]
     ignoresubmodules = untracked
-	tool = bc3
+    tool = bc3
 [core]
     excludesfile = /Users/bjenkins/.gitignore
     editor = vim
