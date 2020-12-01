@@ -19,18 +19,15 @@ conditionally_prefix_path /usr/local/share/npm/bin
 conditionally_prefix_path /usr/local/mysql/bin
 conditionally_prefix_path /usr/texbin
 conditionally_prefix_path ~/bin
-conditionally_prefix_path $HOME/.rvm/bin
 conditionally_prefix_path /usr/local/mysql/bin
+conditionally_prefix_path /opt/crosstool-ng/bin
+conditionally_prefix_path /usr/local/opt/node@10/bin
+conditionally_prefix_path /usr/local/opt/ruby/bin
+conditionally_prefix_path /usr/local/lib/ruby/gems/2.7.0/bin
 
-export I386_ELF_GCC_PREFIX=/opt/cross/i386-elf-gcc_toolchain
-export I386_ELF_GCC_VERSION=5.2.0
-
-export SAGE_HOME=/opt/sage_edk
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
 PATH=.:./bin:${PATH}
-
-export I386_ELF_GCC_PREFIX=/opt/cross/i386-elf-gcc_toolchain
-export I386_ELF_GCC_VERSION=5.2.0
 
 ############################################################
 ## MANPATH
@@ -50,7 +47,7 @@ conditionally_prefix_manpath ~/man
 ## BASH-GIT-PROMPT
 ############################################################
 # Set config variables first
-GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_ONLY_IN_REPO=0
 
 # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
 
@@ -69,6 +66,7 @@ GIT_PROMPT_ONLY_IN_REPO=1
 # GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 
+# If bash-git-prompt is not installed, or GIT_PROMPT_ONLY_IN_REPO is set to 1:
 if [ -n "$BASH" ]; then
   export PS1='\[\033[32m\]\n\s: [\w] \n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
 fi
@@ -128,7 +126,7 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 
 ############################################################
-## Aliases
+#1# Aliases
 ############################################################
 
 if [ -e ~/.bash_aliases ]; then
@@ -157,12 +155,5 @@ fi
 if [[ "$USER" == '' ]]; then
   # mainly for cygwin terminals. set USER env var if not already set
   USER=$USERNAME
-fi
-
-############################################################
-## Load RVM into shell as a function and more
-############################################################
-if [ -f ~/.rvm/scripts/rvm ]; then
-    source ~/.rvm/scripts/rvm
 fi
 

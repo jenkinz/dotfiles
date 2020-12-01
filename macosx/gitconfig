@@ -20,7 +20,7 @@
     pager = true
 [merge]
     summary = true
-    tool = bc3
+	tool = smerge
 [remote "origin"]
     push = HEAD
 [github]
@@ -31,6 +31,7 @@
 [core]
     excludesfile = /Users/bjenkins/.gitignore
     editor = vim
+	autocrlf = true
 [credential]
     helper = osxkeychain
 [difftool]
@@ -45,3 +46,9 @@
     process = git-lfs filter-process
 [mergetool]
 	bc3 = trustExitCode
+	prompt = false
+[http]
+	postBuffer = 1048576000
+[mergetool "smerge"]
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true

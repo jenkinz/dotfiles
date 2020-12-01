@@ -7,7 +7,7 @@
 # Date: July 13, 2013
 
 FILESPEC =
-EXCLUDES = README.md dotfiles.vpj init makefile .gitignore .gitmodules
+EXCLUDES = README.md dotfiles.vpj init makefile .gitignore .gitmodules Brewfile
 
 ifeq ($(OS),Windows_NT)
     FILESPEC = windows/
