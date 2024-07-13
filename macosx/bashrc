@@ -15,17 +15,8 @@ function conditionally_prefix_path {
 
 conditionally_prefix_path /usr/local/bin
 conditionally_prefix_path /usr/local/sbin
-conditionally_prefix_path /usr/local/share/npm/bin
-conditionally_prefix_path /usr/local/mysql/bin
-conditionally_prefix_path /usr/texbin
-conditionally_prefix_path ~/bin
-conditionally_prefix_path /usr/local/mysql/bin
-conditionally_prefix_path /opt/crosstool-ng/bin
-conditionally_prefix_path /usr/local/opt/node@10/bin
-conditionally_prefix_path /usr/local/opt/ruby/bin
-conditionally_prefix_path /usr/local/lib/ruby/gems/2.7.0/bin
-
-export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+conditionally_prefix_path ~/.platformio/penv/bin
+conditionally_prefix_path /Applications/PyCharm.app/Contents/MacOS
 
 PATH=.:./bin:${PATH}
 
@@ -157,3 +148,7 @@ if [[ "$USER" == '' ]]; then
   USER=$USERNAME
 fi
 
+# pnpm
+export PNPM_HOME="/Users/bjenkins/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
